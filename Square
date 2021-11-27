@@ -1,4 +1,4 @@
-abstract class Square (var x3: Int, var y3: Int, var width: Int) : Transforming, Figure(3){
+class Square (var x3: Int, var y3: Int, var width: Int) : Transforming, Figure(3){
     lateinit var name: String
     constructor (square: Square) : this (square.x3, square.y3, square.width)
 
