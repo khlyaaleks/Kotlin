@@ -1,0 +1,31 @@
+import Rect as Rect
+import Circle as Circle
+import Square as Square
+
+fun main() {
+    val figures: Array<Transforming>
+
+    val transforming1: Transforming = Rect( 1, 1,  1,  3)
+    transforming1.move(1,3)
+    transforming1.resize(2)
+    transforming1.rotate(RotateDirection.CLOCKWISE, 10, 4 )
+
+    val transforming2: Transforming = Circle(3, 3, 1)
+    transforming1.move(0,15)
+    transforming1.resize(1)
+    transforming1.rotate(RotateDirection.COUNTERCLOCKWISE, 15, 15 )
+
+    val transforming3: Transforming = Square (0,0,2)
+    transforming1.move(1,1)
+    transforming1.resize(2)
+    transforming1.rotate(RotateDirection.CLOCKWISE, 7, 1 )
+
+    val f1: Figure = Rect(1,1,1,3)
+    val f2: Figure = Circle(3,3,1)
+    val f3: Figure = Transforming = Square (0,0,2)
+
+    println(f1.area())
+    println(f2.area())
+    println(f3.area())
+
+}
