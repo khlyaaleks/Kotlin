@@ -1,0 +1,26 @@
+abstract class Circle(var x2: Int, var y2: Int, var radius: Int) : Transforming, Figure(2) {
+    lateinit var name: String
+
+    constructor(circle: Circle) : this(circle.x2, circle.y2, circle.radius)
+
+    override fun move(dx: Int, dy: Int) {
+        x2 += dx; y2 += dy
+    }
+
+    override fun resize(zoom: Int) {
+        radius += zoom
+    }
+
+    override fun area(): Float {
+        return (3.14 * radius).toFloat()
+    }
+
+    override fun rotate(direction: RotateDirection, centerX: Int, centerY: Int) {
+        when (direction) {
+            RotateDirection.CLOCKWISE -> y2 = centerY + (centerX - (x2 + radius))
+            RotateDirection.CLOCKWISE -> x2 = centerX
+            RotateDirection.COUNTERCLOCKWISE -> y2 = centerY - (centerX - (x2 + radius))
+            RotateDirection.COUNTERCLOCKWISE -> x2 = centerX
+        }
+    }
+}
