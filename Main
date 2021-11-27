@@ -22,7 +22,7 @@ fun main() {
 
     val f1: Figure = Rect(1,1,1,3)
     val f2: Figure = Circle(3,3,1)
-    val f3: Figure = Transforming = Square (0,0,2)
+    val f3: Figure = Square (0,0,2)
 
     println(f1.area())
     println(f2.area())
