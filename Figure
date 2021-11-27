@@ -1,0 +1,6 @@
+abstract class Figure(var id: Int) {
+    abstract fun area(): Float
+    abstract fun move (dx: Int, dy: Int)
+    abstract fun resize (zoom: Int)
+    abstract fun rotate (direction: RotateDirection, centerX: Int, centerY: Int)
+}
