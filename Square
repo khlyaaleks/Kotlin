@@ -1,0 +1,23 @@
+abstract class Square (var x3: Int, var y3: Int, var width: Int) : Transforming, Figure(3){
+    lateinit var name: String
+    constructor (square: Square) : this (square.x3, square.y3, square.width)
+
+
+    override fun move (dx: Int, dy: Int) {
+        x3 += dx; y3 += dy
+    }
+    override fun resize (zoom: Int){
+        width += zoom
+    }
+    override fun area(): Float {
+        return (width*width).toFloat()
+    }
+    override fun rotate(direction: RotateDirection, centerX: Int, centerY: Int) {
+        when (direction){
+            RotateDirection.CLOCKWISE -> y3 = centerY + (centerX - (x3 + width))
+            RotateDirection.CLOCKWISE -> x3 = centerX - width/2
+            RotateDirection.COUNTERCLOCKWISE -> y3 = centerY - (centerX - (x3 + width))
+            RotateDirection.COUNTERCLOCKWISE -> x3 = centerX - width/2
+        }
+    }
+}
