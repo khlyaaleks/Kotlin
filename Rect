@@ -5,17 +5,17 @@ class Rect(var x1: Int, var y1: Int, var width: Int, var height: Int) : Transfor
         x1 += dx; y1 += dy
     }
     override fun resize (zoom: Int){
-        width += zoom; height += zoom
+        width = zoom * width; height = zoom * height
     }
     override fun area(): Float {
         return (width*height).toFloat()
     }
-     override fun rotate(direction: RotateDirection, centerX: Int, centerY: Int) {
-         when (direction){
-             RotateDirection.CLOCKWISE -> y1 = centerY + (centerX - (x1 + width))
-             RotateDirection.CLOCKWISE -> x1 = centerX - height/2
-             RotateDirection.COUNTERCLOCKWISE -> y1 = centerY - (centerX - (x1 + width))
-             RotateDirection.COUNTERCLOCKWISE -> x1 = centerX - width/2
-         }
-     }
+    override fun rotate(direction: RotateDirection, centerX: Int, centerY: Int) {
+        when (direction){
+            RotateDirection.CLOCKWISE -> y1 = centerY + (centerX - (x1 + width))
+            RotateDirection.CLOCKWISE -> x1 = centerX - height/2
+            RotateDirection.COUNTERCLOCKWISE -> y1 = centerY - (centerX - (x1 + width))
+            RotateDirection.COUNTERCLOCKWISE -> x1 = centerX - width/2
+        }
+    }
 }
