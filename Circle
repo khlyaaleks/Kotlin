@@ -1,4 +1,4 @@
- class Circle(var x2: Int, var y2: Int, var radius: Int) : Transforming, Figure(2) {
+class Circle(var x2: Int, var y2: Int, var radius: Int) : Transforming, Figure(2) {
     lateinit var name: String
 
     constructor(circle: Circle) : this(circle.x2, circle.y2, circle.radius)
@@ -8,7 +8,7 @@
     }
 
     override fun resize(zoom: Int) {
-        radius += zoom
+        radius = zoom * radius
     }
 
     override fun area(): Float {
