@@ -7,7 +7,7 @@ class Square (var x3: Int, var y3: Int, var width: Int) : Transforming, Figure(3
         x3 += dx; y3 += dy
     }
     override fun resize (zoom: Int){
-        width += zoom
+        width = zoom * width
     }
     override fun area(): Float {
         return (width*width).toFloat()
